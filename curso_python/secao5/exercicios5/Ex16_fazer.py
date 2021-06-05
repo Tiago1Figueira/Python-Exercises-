@@ -1,0 +1,1 @@
+# usa-se o switch e a def de funções.

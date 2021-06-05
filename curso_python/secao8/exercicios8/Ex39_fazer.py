@@ -1,0 +1,1 @@
+#aprender o que é função troque!
