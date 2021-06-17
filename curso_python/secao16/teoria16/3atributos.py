@@ -59,8 +59,13 @@ print(Produto.imposto) #acesso correto de um atributo de classe.
 #4725.0
 #1.05
 
-
-3-atributos dinamicos (
+3-atributos dinamicos 1h10min
+Um atributo de instância que pode ser criado no momento da execução, ou seja, qdo se está criando o código.
+O atributo dinâmico será exclusivo da instância que o criou. Esse atributo não é comum, já que a declaração de
+atributos acontece qdo se está fazendo atributos de instância. Ou seja, atributos de instância e atributos de classe.
+__dict__ = dictionary : esse código mostra toda a estrutura ligada a um objeto:atributos de instancia e dinâmicos. Mostra
+a informação como se fosse um dicionario
+e.g.: print(p2.__dict__) imprime toda a estrutura do objeto produto 2.
 
 """
 
@@ -74,9 +79,19 @@ class Produto:
         self.valor =(valor * Produto.imposto)
 
 p1 = Produto('PlayStation 4', 'video game', 2300)
-p2 = Produto('Xbox', 'video game', 4500) #p1 e p2 sao (instancias)
-print(p1.valor)# acesso possivel mas incorreto a um atributo de classe.
-print(p2.valor)# acesso possivel mas incorreto a um atributo de classe.
 
-#obs.: não precisamos criar uma instancia de uma classe para fazer acesso a um atributo de classe.
-print(Produto.imposto) #acesso correto de um atributo de classe.
+p2 = Produto('arroz', 'mercearia', 5.99) #p1 e p2 sao (instancias)
+p2.peso = '5kg' #Aqui temos um atributo dinâmico. Note que na classe produto não foi criado o atributo peso!
+
+print(f'produto: {p2.nome}\ndescrição: {p2.descricao}\nvalor: {p2.valor}\npeso: {p2.peso}')
+
+# deletando atributos dinâmicos dinamicamente:
+print(p1.__dict__)
+print(p2.__dict__)
+
+del p2.peso # deletou atributo peso de p2.(atributo dinamico)
+del p2.valor # deletou atributo valor de p2. (atributo de instância)
+print(p1.__dict__)
+print(p2.__dict__)
+
+
